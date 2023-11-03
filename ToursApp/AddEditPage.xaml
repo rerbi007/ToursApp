@@ -1,0 +1,38 @@
+﻿<Page x:Class="ToursApp.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToursApp" 
+      xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+
+    <Page.Resources>
+        <ImageBrush x:Key="watermark" ImageSource="/Resources/textboxbackground.gif"></ImageBrush>
+    </Page.Resources>
+    
+    
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Название"></TextBlock>
+        <TextBlock Text="Количество звезд" Grid.Row="1"></TextBlock>
+        <TextBlock Text="Страна" Grid.Row="2"></TextBlock>
+        <toolkit:MaskedTextBox TextChanged="OnTextBoxTextChanged" x:Name="box" Text="{Binding Name}" MaxLength="100" Grid.Column="1"></toolkit:MaskedTextBox>    
+        <ComboBox x:Name="ComboStars" Text="{Binding CountOfStars}" Grid.Column="1" Grid.Row="1" Width="175" HorizontalAlignment="Left"></ComboBox>
+        <ComboBox SelectedItem="{Binding Country}" Grid.Column="2" Grid.Row="2" x:Name="ComboCountries" DisplayMemberPath="Name"></ComboBox>
+        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="3" Name="BtnSave" Click="BtnSave_Click"></Button>
+
+    </Grid>
+</Page>
