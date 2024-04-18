@@ -63,19 +63,9 @@ namespace ToursApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap textboxbackground {
+        public static System.Drawing.Bitmap logo {
             get {
-                object obj = ResourceManager.GetObject("textboxbackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap логотип {
-            get {
-                object obj = ResourceManager.GetObject("логотип", resourceCulture);
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

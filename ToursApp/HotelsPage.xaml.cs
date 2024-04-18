@@ -26,9 +26,6 @@ namespace ToursApp
             // DGridHotels.ItemsSource = ToursBaseEntities.GetContext().Hotels.ToList();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {

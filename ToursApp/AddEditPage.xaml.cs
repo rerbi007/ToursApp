@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Toolkit =  Xceed.Wpf.Toolkit;
 
 namespace ToursApp
 {
@@ -34,10 +25,8 @@ namespace ToursApp
             ComboCountries.ItemsSource = ToursBaseEntities.GetContext().Countries.ToList();
             ComboCountries.SelectedValue = 1;
 
-            List<int> stars = new List<int>() { 1, 2, 3, 4, 5 };
-            ComboStars.ItemsSource = stars;
-            ComboStars.SelectedIndex = 2;
-
+            ComboStars.ItemsSource = ToursBaseEntities.GetContext().Stars.ToList();
+            ComboStars.SelectedValue = 2;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -68,18 +57,6 @@ namespace ToursApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
-            }
-
-        }
-
-        private void OnTextBoxTextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (sender is Toolkit.MaskedTextBox box)
-            {
-                if (string.IsNullOrEmpty(box.Text))
-                    box.Background = (ImageBrush)FindResource("watermark");
-                else
-                    box.Background = null;
             }
         }
     }

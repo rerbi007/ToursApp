@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,14 @@ namespace ToursApp
             InitializeComponent();
             MainFrame.Navigate(new HotelsPage());
             Manager.MainFrame = MainFrame;
+
+            //ImportTours();
+        }
+
+        private void ImportTours()
+        {
+            var fileData = File.ReadAllLines(@"C:\Users\user\OneDrive\Документы\Tours122.txt");
+            var images = Directory.GetFiles(@"");
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
